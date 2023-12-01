@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Distância entre Pontos</title>
+  <style>
+    body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-size: cover;
+  margin: 0;
+  background-image: url(img/8.jpeg);
+  transition: background 1s ease-in-out;
+  font-family: 'Roboto', sans-serif;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+}
+
+h2 {
+  background-color: purple;
+  padding: 10px 10px;
+  color: white;
+  position: fixed;
+  top: 20px;
+  left: 0;
+  animation: moveAroundBody 15s linear infinite;
+}
+
+@keyframes moveAroundBody {
+  0%, 100% {
+    top: 20px;
+    left: 0;
+  }
+  25% {
+    top: calc(50% - 25px);
+    left: calc(100% - 405px);
+  }
+  50% {
+    top: calc(100% - 50px);
+    left: 0;
+  }
+  75% {
+    top: calc(50% - 25px);
+    left: calc(100% - 405px);
+  }
+}
+
+  </style>
+</head>
+<body>
+    <h2>OBRIGADO POR USAR NOSSO SITE!</h2>
+</body>
+</html>

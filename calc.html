@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora de Distância entre Pontos</title>
+  <style>
+     body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-size: contain;
+      margin: 0;
+      transition: background 1s ease-in-out;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .container {
+      position: relative;
+      text-align: center;
+    }
+
+    .rectangle {
+      width: 50vw;
+      background-color: #f0f0f0;
+      border: 2px solid #4caf50;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding: 20px;
+      box-sizing: border-box;
+    }
+
+    input {
+      width: 80%;
+      padding: 12px;
+      margin: 10px 0;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 16px;
+      background-color: #4caf50;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #resultado {
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    label {
+      display: block;
+      text-align: left;
+      margin: 10px 0 5px;
+      color: #333;
+    }
+
+    /* Adicionando regra de mídia para telas de 768px */
+    @media screen and (max-width: 768px) {
+      .rectangle {
+        width: 80vw;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="rectangle">
+      <h2>Calculadora de Distância entre Pontos</h2>
+      <label for="x1">Coordenada X do Ponto 1</label>
+      <input type="number" id="x1" required>
+      <label for="y1">Coordenada Y do Ponto 1</label>
+      <input type="number" id="y1" required>
+      <label for="x2">Coordenada X do Ponto 2</label>
+      <input type="number" id="x2" required>
+      <label for="y2">Coordenada Y do Ponto 2</label>
+      <input type="number" id="y2" required>
+      <button id="1" onclick="calcularDistancia()">Calcular Distância</button>
+      <div id="resultado"></div>
+    </div>
+  </div>
+
+  <script>
+    function calcularDistancia() {
+      var x1 = parseFloat(document.getElementById('x1').value);
+      var y1 = parseFloat(document.getElementById('y1').value);
+      var x2 = parseFloat(document.getElementById('x2').value);
+      var y2 = parseFloat(document.getElementById('y2').value);
+  
+      var distancia = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+      document.getElementById('resultado').innerHTML = 'A distância entre os pontos é: ' + distancia.toFixed(2);
+   
+      setTimeout(function() {
+      substituirConteudoFormulario();
+    }, 4000);
+   
+    }
+
+    document.addEventListener("DOMContentLoaded", function() {
+      const images = ["img/1.jpeg", "img/2.jpeg", "img/3.jpeg", "img/4.jpeg", "img/5.jpeg", "img/6.jpeg", "img/7.jpeg", "img/8.jpeg", "img/9.jpeg", "img/10.jpeg", "img/11.jpeg", "img/12.jpeg", "img/13.jpeg", "img/14.jpeg", "img/15.jpeg", "img/16.jpeg", "img/17.jpeg", "img/18.jpeg", "img/19.jpeg", "img/20.jpeg", "img/21.jpeg", "img/22.jpeg", "img/23.jpeg"];
+      const interval = 3300;
+
+      let currentImageIndex = 0;
+      const body = document.body;
+
+      function changeBackground() {
+        body.style.backgroundImage = `url(${images[currentImageIndex]})`;
+        currentImageIndex = (currentImageIndex + 1) % images.length;
+      }
+
+      changeBackground();
+
+      setInterval(changeBackground, interval);
+    });
+
+    function substituirConteudoFormulario() {
+
+    var formulario = document.querySelector('.rectangle');
+
+    // Limpar conteúdo do formulário
+    formulario.innerHTML = '';
+
+    // Adicionar título h2
+    var novoTitulo = document.createElement('h2');
+    novoTitulo.innerHTML = 'Deseja fazer outro cálculo ou encerrar o programa?';
+
+    // Adicionar título ao formulário
+    formulario.appendChild(novoTitulo);
+
+    // Adicionar botões para outra ação, se necessário
+    var btnNovoCalculo = document.createElement('button');
+    btnNovoCalculo.innerHTML = 'Novo Cálculo';
+    btnNovoCalculo.style.marginRight = '10px';
+    btnNovoCalculo.onclick = function() {
+    
+      // Reiniciar o formulário
+      formulario.innerHTML = '<h2>Calculadora de Distância entre Pontos</h2>' +
+        '<label for="x1">Coordenada X do Ponto 1</label>' +
+        '<input type="number" id="x1" required>' +
+        '<label for="y1">Coordenada Y do Ponto 1</label>' +
+        '<input type="number" id="y1" required>' +
+        '<label for="x2">Coordenada X do Ponto 2</label>' +
+        '<input type="number" id="x2" required>' +
+        '<label for="y2">Coordenada Y do Ponto 2</label>' +
+        '<input type="number" id="y2" required>' +
+        '<button id="1" onclick="calcularDistancia()">Calcular Distância</button>' +
+        '<div id="resultado"></div>';
+    };
+
+    var btnEncerrar = document.createElement('button');
+    btnEncerrar.innerHTML = 'Encerrar Programa';
+    btnEncerrar.onclick = function() {
+      window.location.href = 'tchau.html';
+    };
+
+    formulario.appendChild(btnNovoCalculo);
+    formulario.appendChild(btnEncerrar);
+  }
+   
+  </script>
+</body>
+</html>
