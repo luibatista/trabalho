@@ -109,7 +109,7 @@
     }
 
     document.addEventListener("DOMContentLoaded", function() {
-      const images = ["1.jpeg", "2.jpeg", "3.jpeg", "4.jpeg", "5.jpeg", "6.jpeg", "7.jpeg", "8.jpeg", "9.jpeg", "10.jpeg", "11.jpeg", "12.jpeg", "13.jpeg", "14.jpeg", "15.jpeg", "16.jpeg", "17.jpeg", "18.jpeg", "19.jpeg", "20.jpeg", "21.jpeg", "22.jpeg", "23.jpeg"];
+      const images = ["1.jpeg", "2.jpeg", "3.jpeg", "4.jpeg", "5.jpeg", "6.jpeg", "7.jpeg", "8.jpeg", "9.jpeg", "10.jpeg", "11.jpeg", "12.jpeg", "13.jpeg", "14.jpeg", "15.jpeg", "17.jpeg", "18.jpeg", "19.jpeg", "20.jpeg", "21.jpeg", "22.jpeg", "23.jpeg"];
       const interval = 3300;
 
       let currentImageIndex = 0;
@@ -129,23 +129,18 @@
 
     var formulario = document.querySelector('.rectangle');
 
-    // Limpar conteúdo do formulário
     formulario.innerHTML = '';
 
-    // Adicionar título h2
     var novoTitulo = document.createElement('h2');
     novoTitulo.innerHTML = 'Deseja fazer outro cálculo ou encerrar o programa?';
 
-    // Adicionar título ao formulário
     formulario.appendChild(novoTitulo);
 
-    // Adicionar botões para outra ação, se necessário
     var btnNovoCalculo = document.createElement('button');
     btnNovoCalculo.innerHTML = 'Novo Cálculo';
     btnNovoCalculo.style.marginRight = '10px';
     btnNovoCalculo.onclick = function() {
     
-      // Reiniciar o formulário
       formulario.innerHTML = '<h2>Calculadora de Distância entre Pontos</h2>' +
         '<label for="x1">Coordenada X do Ponto 1</label>' +
         '<input type="number" id="x1" required>' +
